@@ -1,0 +1,410 @@
+/* =========================================
+   1. GALAXY COLOR PALETTE
+========================================= */
+
+:root {
+    --bg: #eef4ff;
+    --card: #ffffff;
+    --card-soft: #f5f8ff;
+
+    --navy: #071b46;
+    --blue-dark: #103c91;
+    --blue: #1769e0;
+    --blue-light: #4da3ff;
+    --cyan: #48d7ff;
+
+    --border: #b7d4ff;
+    --border-light: #dce9ff;
+
+    --text: #10264f;
+    --text-soft: #607497;
+
+    --radius: 8px;
+
+    --shadow:
+        0 5px 18px rgba(20, 83, 170, 0.10);
+
+    --shadow-hover:
+        0 12px 28px rgba(23, 105, 224, 0.22);
+
+    --glow:
+        0 0 12px rgba(72, 215, 255, 0.35);
+}
+
+
+/* =========================================
+   2. GLOBAL RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(77, 163, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(72, 215, 255, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    min-height: 100vh;
+
+    padding-bottom: 40px;
+}
+
+
+/* =========================================
+   3. MAIN TITLE
+========================================= */
+
+body > h1 {
+    text-align: center;
+
+    color: #ffffff;
+
+    font-size: 2.3rem;
+
+    font-weight: 700;
+
+    padding: 55px 20px 65px;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(77, 163, 255, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(72, 215, 255, 0.2),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #06132f,
+            #103c91,
+            #071b46
+        );
+
+    border-bottom: 3px solid var(--blue-light);
+
+    box-shadow:
+        0 8px 30px rgba(7, 27, 70, 0.3);
+
+    text-shadow:
+        0 0 12px rgba(72, 215, 255, 0.6);
+}
+
+
+/* =========================================
+   4. BACK BUTTON
+========================================= */
+
+.back {
+    display: inline-block;
+
+    margin: 25px 0 0  max(20px, calc((100% - 900px) / 2));
+
+    padding: 9px 20px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue)
+    );
+
+    border: 1px solid var(--blue-light);
+
+    border-radius: 4px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.back:hover,
+.back:focus-visible {
+    background: var(--navy);
+
+    color: var(--cyan);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--glow);
+
+    outline: none;
+}
+
+
+/* =========================================
+   5. PRESENTATION CONTAINER
+========================================= */
+
+.presentation {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 25px auto;
+
+    padding: 0 20px;
+
+    display: grid;
+
+    gap: 24px;
+}
+
+
+/* =========================================
+   6. CONTENT SECTIONS
+========================================= */
+
+.presentation section {
+    position: relative;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-top: 4px solid var(--blue);
+
+    border-radius: var(--radius);
+
+    padding: 28px 30px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Different accent colors for sections */
+
+.presentation section:nth-child(2) {
+    border-top-color: var(--blue-light);
+}
+
+.presentation section:nth-child(3) {
+    border-top-color: var(--cyan);
+}
+
+
+/* Hover effect */
+
+.presentation section:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color: var(--blue-light);
+}
+
+
+/* =========================================
+   7. SECTION HEADINGS
+========================================= */
+
+.presentation h2 {
+    color: var(--blue-dark);
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    margin-bottom: 16px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+
+/* =========================================
+   8. PARAGRAPHS
+========================================= */
+
+.presentation p {
+    color: var(--text-soft);
+
+    font-size: 1rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   9. LISTS
+========================================= */
+
+.presentation ul,
+.presentation ol {
+    padding-left: 25px;
+
+    color: var(--text-soft);
+}
+
+.presentation li {
+    padding: 7px 10px;
+
+    margin-bottom: 5px;
+
+    border-left: 3px solid var(--border);
+
+    background: var(--card-soft);
+
+    transition: all 0.2s ease;
+}
+
+
+/* Bullet list */
+
+.presentation ul {
+    list-style-type: none;
+}
+
+.presentation ul li::before {
+    content: "▹";
+
+    color: var(--blue);
+
+    font-weight: bold;
+
+    margin-right: 10px;
+}
+
+
+/* Number list */
+
+.presentation ol li::marker {
+    color: var(--blue);
+
+    font-weight: 700;
+}
+
+
+/* List hover */
+
+.presentation li:hover {
+    background: #e5f1ff;
+
+    border-left-color: var(--cyan);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   10. FOOTER SPACE
+========================================= */
+
+body::after {
+    content: "CLOUD COMPUTING  |  LEARN • BUILD • INNOVATE";
+
+    display: block;
+
+    text-align: center;
+
+    padding: 22px 10px;
+
+    margin-top: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #06132f,
+        #103c91,
+        #071b46
+    );
+
+    color: #dce9ff;
+
+    border-top: 3px solid var(--blue-light);
+
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    body > h1 {
+        font-size: 1.7rem;
+
+        padding: 40px 15px 45px;
+    }
+
+    .back {
+        margin: 20px 14px 0;
+    }
+
+    .presentation {
+        padding: 0 14px;
+
+        margin: 20px auto;
+
+        gap: 18px;
+    }
+
+    .presentation section {
+        padding: 20px;
+    }
+
+    .presentation h2 {
+        font-size: 1.25rem;
+    }
+
+    .presentation p,
+    .presentation li {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* =========================================
+   12. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}

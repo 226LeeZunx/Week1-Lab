@@ -1,0 +1,709 @@
+
+:root {
+    --bg: #eef4ff;
+    --bg-dark: #07152f;
+
+    --card: #ffffff;
+    --card-soft: #f5f8ff;
+
+    --navy: #071b46;
+    --blue-dark: #103c91;
+    --blue: #1769e0;
+    --blue-light: #4da3ff;
+    --cyan: #48d7ff;
+
+    --border: #b7d4ff;
+    --border-light: #dce9ff;
+
+    --text: #10264f;
+    --text-soft: #607497;
+
+    --radius: 8px;
+
+    --shadow:
+        0 5px 18px rgba(20, 83, 170, 0.10);
+
+    --shadow-hover:
+        0 12px 28px rgba(23, 105, 224, 0.22);
+
+    --glow:
+        0 0 12px rgba(72, 215, 255, 0.35);
+}
+
+
+/* =========================================
+   2. GLOBAL RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(77, 163, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(72, 215, 255, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   3. LOGO ZONE - GALAXY HEADER
+========================================= */
+
+.logo-zone {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(77, 163, 255, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(72, 215, 255, 0.18),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #06132f,
+            #103c91,
+            #071b46
+        );
+
+    color: #fff;
+    text-align: center;
+
+    padding: 40px 20px 50px;
+
+    border-bottom: 3px solid var(--blue-light);
+
+    box-shadow:
+        0 8px 30px rgba(7, 27, 70, 0.3);
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--cyan);
+
+    background: #fff;
+
+    box-shadow:
+        0 0 15px rgba(72, 215, 255, 0.7),
+        0 0 35px rgba(23, 105, 224, 0.5);
+
+    margin-bottom: 14px;
+}
+
+.logo-zone h1 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 12px rgba(72, 215, 255, 0.6);
+}
+
+.back {
+    position: absolute;
+
+    top: 16px;
+    left: 20px;
+
+    color: #fff;
+    text-decoration: none;
+
+    background: rgba(77, 163, 255, 0.15);
+
+    border: 1px solid var(--blue-light);
+
+    padding: 7px 18px;
+
+    border-radius: 5px;
+
+    font-size: 0.9rem;
+
+    transition: all 0.25s ease;
+}
+
+.back:hover {
+    background: var(--blue);
+    box-shadow: var(--glow);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   4. MAIN LAYOUT
+========================================= */
+
+main {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 35px auto;
+
+    padding: 0 20px;
+
+    display: grid;
+    gap: 28px;
+}
+
+
+/* =========================================
+   5. GENERAL CARD
+========================================= */
+
+.card {
+    position: relative;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-top: 4px solid var(--blue);
+
+    border-radius: var(--radius);
+
+    padding: 28px 30px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card.lifted {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color: var(--blue-light);
+}
+
+.card h2 {
+    color: var(--blue-dark);
+
+    margin-bottom: 18px;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--border-light);
+
+    padding-bottom: 12px;
+}
+
+.card h3 {
+    color: var(--navy);
+
+    font-size: 1.15rem;
+
+    margin: 22px 0 12px;
+}
+
+
+/* =========================================
+   6. PERSONAL INFORMATION
+========================================= */
+
+.info-zone {
+    border-top-color: var(--blue);
+}
+
+.info-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.info-list div {
+    background: var(--card-soft);
+
+    border: 1px solid var(--border-light);
+
+    border-left: 3px solid var(--blue-light);
+
+    border-radius: 5px;
+
+    padding: 14px 16px;
+
+    transition: all 0.25s ease;
+}
+
+.info-list div:hover {
+    background: #e9f2ff;
+
+    border-left-color: var(--cyan);
+
+    transform: translateX(3px);
+}
+
+.info-list dt {
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+    color: var(--text-soft);
+}
+
+.info-list dd {
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    color: var(--navy);
+}
+
+
+/* =========================================
+   7. ABOUT & PROJECTS
+========================================= */
+
+.about-zone {
+    border-top-color: var(--cyan);
+}
+
+.intro-text p {
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 16px;
+}
+
+.project {
+    background: var(--card-soft);
+
+    border: 1px solid var(--border);
+
+    border-left: 4px solid var(--blue);
+
+    border-radius: 6px;
+
+    padding: 20px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.project:hover,
+.project.lifted {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-left-color: var(--cyan);
+}
+
+.project h4 {
+    color: var(--navy);
+
+    margin-bottom: 8px;
+
+    font-size: 1.05rem;
+}
+
+.project-desc {
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================
+   8. GITHUB BUTTON
+========================================= */
+
+.github {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue)
+    );
+
+    color: #fff;
+
+    padding: 8px 20px;
+
+    border-radius: 4px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    border: 1px solid var(--blue-light);
+
+    transition: all 0.25s ease;
+}
+
+.github:hover {
+    background: var(--navy);
+
+    box-shadow: var(--glow);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   9. SKILLS
+========================================= */
+
+.skills-zone {
+    border-top-color: var(--blue-light);
+}
+
+.skill-grid {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(110px, 1fr));
+
+    gap: 14px;
+}
+
+.skill {
+    background: var(--card-soft);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 5px;
+
+    padding: 18px 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+}
+
+.skill:hover,
+.skill.lifted {
+    transform: translateY(-5px);
+
+    background: #e5f1ff;
+
+    border-color: var(--blue-light);
+
+    box-shadow: var(--shadow-hover);
+}
+
+.skill img,
+.text-icon {
+    width: 52px;
+    height: 52px;
+}
+
+.skill img {
+    object-fit: contain;
+}
+
+.text-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue-light)
+    );
+
+    color: #fff;
+
+    font-weight: 800;
+
+    font-size: 1.05rem;
+
+    letter-spacing: 0.03em;
+
+    box-shadow: var(--glow);
+}
+
+.skill span {
+    font-weight: 600;
+
+    font-size: 0.9rem;
+
+    color: var(--navy);
+}
+
+
+/* =========================================
+   10. CONTACT
+========================================= */
+
+.contact-zone {
+    border-top-color: var(--blue-dark);
+}
+
+.contact-note {
+    color: var(--text-soft);
+
+    margin-bottom: 16px;
+}
+
+.contact-list {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 14px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    background: var(--card-soft);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    transition: all 0.25s ease;
+}
+
+.contact-item:hover,
+.contact-item:focus-visible {
+    transform: translateY(-4px);
+
+    background: #e5f1ff;
+
+    border-color: var(--blue-light);
+
+    box-shadow: var(--shadow-hover);
+
+    outline: none;
+}
+
+.contact-icon {
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue)
+    );
+
+    color: #fff;
+
+    box-shadow: var(--glow);
+}
+
+.contact-icon img {
+    width: 26px;
+    height: 26px;
+}
+
+.contact-text {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.contact-text strong {
+    color: var(--navy);
+}
+
+.contact-text small {
+    color: var(--text-soft);
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.footer {
+    text-align: center;
+
+    padding: 22px 18px;
+
+    background: linear-gradient(
+        135deg,
+        #06132f,
+        #103c91,
+        #071b46
+    );
+
+    color: #dce9ff;
+
+    border-top: 3px solid var(--blue-light);
+}
+
+
+/* =========================================
+   12. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    main {
+        margin: 20px auto;
+
+        padding: 0 14px;
+
+        gap: 20px;
+    }
+
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-zone h1 {
+        font-size: 1.5rem;
+    }
+
+    .back {
+        position: static;
+
+        display: inline-block;
+
+        margin-top: 12px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   13. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}
